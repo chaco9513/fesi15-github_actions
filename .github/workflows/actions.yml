@@ -7,7 +7,7 @@ on : push
 jobs :
   push-job:
     #어떤 환경에서 실행할거?
-    runs-on: ibuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name : 첫 번째 작업
         run : echo "첫 번째 작업 실행 중"
@@ -24,6 +24,6 @@ jobs :
 
       - name : Github Actions의 secret 변수 사용해보기
         run : |
-          echo $({ secrets.MY_NAME })
-          echo $({ secrets.MY_HOBBY })
+          echo ${{ secrets.MY_NAME }}
+          echo ${{ secrets.MY_HOBBY }}
 
